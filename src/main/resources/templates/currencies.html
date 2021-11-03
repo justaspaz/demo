@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:h="http://xmlns.jcp.org/jsf/html">
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Title</title>
+</head>
+<body>
+  <ul style="list-style-type:none">
+    <li th:each="currency: ${currencies}">
+      <a th:href="@{/exangeRate(currencyAbbreviation=${currency.currencyAbbreviation})}">
+        <span th:text="${currency.currencyName}">Default</span></a>
+    </li>
+  </ul>
+</body>
+</html>

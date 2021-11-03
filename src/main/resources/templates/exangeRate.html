@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Date</th>
+        <th>ExangeRate</th>
+    </tr>
+  <tr th:each="exangeRate: ${exangeRates}">
+    <td th:text="${exangeRate.date}">Default</td>
+    <td th:text="${exangeRate.exangeRate}">Default</td>
+  </tr>
+</table>
+</body>
+</html>

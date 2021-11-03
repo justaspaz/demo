@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="#" th:action="@{/calculationCalculate}" th:object="${calculation}" method="post">
+<div class="form-group blu-margin">
+    <select th:field="*{oneCurrencyAbbreviation}">
+        <option value="0">select currency from witch to convert</option>
+        <option th:each="currency : ${currencies}" th:value="${currency.currencyAbbreviation}" th:text="${currency.currencyAbbreviation}"></option>
+    </select>
+    <input type="text" th:field="*{floatNumber}" placeholder="float">
+    <select th:field="*{twoCurrencyAbbreviation}">
+        <option value="0">select currency to witch to convert</option>
+        <option th:each="currency : ${currencies}" th:value="${currency.currencyAbbreviation}" th:text="${currency.currencyAbbreviation}"></option>
+    </select>
+    <input type="submit" value="Submit" />
+</div>
+</form>
+</body>
+</html>
